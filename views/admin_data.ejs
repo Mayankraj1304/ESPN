@@ -1,0 +1,112 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Cricket Score</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-3xl">
+    <h2 class="text-3xl font-bold text-blue-600 text-center mb-6">Update Cricket Match Score</h2>
+
+    <form action="/update-score" method="POST" class="space-y-6">
+
+      <!-- Team Dropdown -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Batting Team</label>
+          <select name="battingTeam" class="w-full px-4 py-2 rounded-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <% teams.forEach(function(team) { %>
+              <option value="<%= team.name %>" <%= match.battingTeam === team.name ? 'selected' : '' %>><%= team.name %></option>
+            <% }); %>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Bowling Team</label>
+          <select name="bowlingTeam" class="w-full px-4 py-2 rounded-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <% teams.forEach(function(team) { %>
+              <option value="<%= team.name %>" <%= match.bowlingTeam === team.name ? 'selected' : '' %>><%= team.name %></option>
+            <% }); %>
+          </select>
+        </div>
+      </div>
+
+      <!-- Player Selection -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Striker</label>
+          <select name="striker" class="w-full px-4 py-2 rounded-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <% players.forEach(function(player) { %>
+              <option value="<%= player %>" <%= match.striker === player ? 'selected' : '' %>><%= player %></option>
+            <% }); %>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Non-Striker</label>
+          <select name="nonStriker" class="w-full px-4 py-2 rounded-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <% players.forEach(function(player) { %>
+              <option value="<%= player %>" <%= match.nonStriker === player ? 'selected' : '' %>><%= player %></option>
+            <% }); %>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Bowler</label>
+          <select name="bowler" class="w-full px-4 py-2 rounded-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <% players.forEach(function(player) { %>
+              <option value="<%= player %>" <%= match.bowler === player ? 'selected' : '' %>><%= player %></option>
+            <% }); %>
+          </select>
+        </div>
+      </div>
+
+      <!-- Score Inputs -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Runs</label>
+          <input type="number" name="runs" value="<%= match.runs %>" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </div>
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Wickets</label>
+          <input type="number" name="wickets" value="<%= match.wickets %>" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </div>
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Overs</label>
+          <input type="text" name="overs" value="<%= match.overs %>" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="e.g., 12.3">
+        </div>
+      </div>
+
+      <!-- Innings and Match Status -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Innings</label>
+          <select name="innings" class="w-full px-4 py-2 rounded-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <option value="1st" <%= match.innings === '1st' ? 'selected' : '' %>>1st Innings</option>
+            <option value="2nd" <%= match.innings === '2nd' ? 'selected' : '' %>>2nd Innings</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Match Status</label>
+          <select name="status" class="w-full px-4 py-2 rounded-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <option value="ongoing" <%= match.status === 'ongoing' ? 'selected' : '' %>>Ongoing</option>
+            <option value="completed" <%= match.status === 'completed' ? 'selected' : '' %>>Completed</option>
+            <option value="scheduled" <%= match.status === 'scheduled' ? 'selected' : '' %>>Scheduled</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="text-center pt-4">
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition duration-300 ">
+          Update Score
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

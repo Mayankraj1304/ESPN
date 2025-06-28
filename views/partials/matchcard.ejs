@@ -1,0 +1,31 @@
+<div class="bg-white text-black w-[300px] h-[120px] rounded-xl p-3 text-sm leading-tight cursor-pointer">
+    <div class="flex justify-between">
+      <div>
+        <p><%= match.status %></p>
+        <p><%= match.type %></p>
+        <p><%= match.venue %></p>
+      </div>
+    </div>
+  
+    <div class="flex justify-between mt-1">
+      <div class="font-bold">
+        <div class="flex items-center space-x-1">
+          <img src="/images/ind.jpg" class="w-[30px] h-[30px]" />
+          <p>IND</p>
+        </div>
+        <div class="flex items-center space-x-1">
+          <img src="/images/eng.jpg" class="w-[30px] h-[30px]" />
+          <p>ENG</p>
+        </div>
+      </div>
+      <div class="flex items-end justify-end text-right">
+        <p><%= match.overs %> <%= match.scores %></p>
+      </div>
+    </div>
+  
+    <div class="mt-2">
+      <p><%= match.foot %></p>
+      <hr class="mt-1" />
+    </div>
+  </div>
+  

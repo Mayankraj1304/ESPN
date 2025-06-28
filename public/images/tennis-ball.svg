@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="TennisBall">
+  <path fill="url(#paint0_linear_3283_1507)" fill-rule="evenodd" d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12Z" clip-rule="evenodd"></path>
+  <path fill="#006185" fill-rule="evenodd" d="M4.99982 20.4855C4.48165 20.0576 4.00334 19.5831 3.57129 19.0685C5.65948 17.4203 6.99982 14.8666 6.99982 11.9998C6.99982 9.13308 5.65948 6.57938 3.57129 4.93121C4.00334 4.41658 4.48165 3.9421 4.99982 3.51416C7.44283 5.53174 8.99982 8.58396 8.99982 11.9998C8.99982 15.4157 7.44283 18.4679 4.99982 20.4855ZM15 11.9998C15 8.58396 16.557 5.53174 19 3.51416C19.5182 3.9421 19.9965 4.41658 20.4285 4.93121C18.3403 6.57938 17 9.13308 17 11.9998C17 14.8666 18.3403 17.4203 20.4285 19.0685C19.9965 19.5831 19.5182 20.0576 19 20.4855C16.557 18.4679 15 15.4157 15 11.9998Z" clip-rule="evenodd" class="color850026 svgShape"></path>
+  <defs>
+    <linearGradient id="paint0_linear_3283_1507" x1="0" x2="24" y1="0" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset=".083" stop-color="#87ddfd" class="stopColorff6a6a svgShape"></stop>
+      <stop offset="1" stop-color="#22bdf7" class="stopColorf72257 svgShape"></stop>
+    </linearGradient>
+  </defs>
+</svg>
